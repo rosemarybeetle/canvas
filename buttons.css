@@ -6,7 +6,7 @@
     cursor:pointer;
 }    
 
-hoverColor = #e3e3e3; // define hover color
+hoverColor = #e3e3e3; // define hover color.
 .wiz-buttons > a > .button {
     min-width: 75px;
 }
