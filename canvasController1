@@ -3,7 +3,7 @@
 <canvas id="myCanvas" width=800 height="300" style="border:1px solid #000000;">Testing canvas. If you can see this message your browser doesn't support this yet :(
 </canvas>
 <div class="wiz-buttons">
-    <a class="previous" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="prevButt" onmouseup="xMoveLeft()">Previous</span></a><a class="next" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="nextButt">Next</span></a>
+    <a class="previous" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="prevButt" onmouseup="xMoveLeft()">Previous</span></a><a class="next" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="nextButt" onmouseup="xMoveRight()">Next</span></a>
 </div>​
 <br />
 End here...
@@ -21,11 +21,24 @@ function drawRect (xc,yc)
 ctx.fillStyle="#FF0000"; 
 ctx.fillRect(xc,yc,50,50);
 }
+function clearRect (xc,yc)
+{
+ctx.fillStyle="#FFFFFF"; 
+ctx.fillRect(xc,yc,50,50);
+}
 drawRect(_xi,_yi); // initialise draw
+
+function xMoveRight()
+{
+clearRect (_x,_y);
+_x=_x+_xi;
+drawRect(_x,_y);
+}
 
 function xMoveLeft()
 {
-_x=_x+_xi;
+clearRect (_x,_y);
+_x=_x-_xi;
 drawRect(_x,_y);
 }
 
