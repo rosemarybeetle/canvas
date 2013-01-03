@@ -10,14 +10,14 @@ End here...
 <script>
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
-var _xi=10;
-var _yi=10;
-// function drawRect ()
-//{
+var _xi=10; // initialising variable for _x position
+var _yi=10; // initialising variable for _y position
+function drawRect (xc,yc)
+{
 ctx.fillStyle="#FF0000"; 
 ctx.fillRect(_xi,_yi,50,50);
-//}
-//drawRect();
+}
+drawRect(_xi,_yi);
 function xMoveLeft()
 {
 var _xinc=10; // x movement increment
