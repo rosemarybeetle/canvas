@@ -3,13 +3,28 @@
 <canvas id="myCanvas" width=800 height="300" style="border:1px solid #000000;">Testing canvas. If you can see this message your browser doesn't support this yet :(
 </canvas>
 <div class="wiz-buttons">
-    <a class="previous" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button">Previous</span></a><a class="next" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button">Next</span></a>
+    <a class="previous" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="prevButt" onmouseup="xMoveLeft()">Previous</span></a><a class="next" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="nextButt">Next</span></a>
 </div>​
 <br />
 End here...
 <script>
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
-ctx.fillStyle="#FF0000";
-ctx.fillRect(10,10,50,50);
+var _xi=10;
+var _yi=10;
+// function drawRect ()
+//{
+ctx.fillStyle="#FF0000"; 
+ctx.fillRect(_xi,_yi,50,50);
+//}
+//drawRect();
+function xMoveLeft()
+{
+var _xinc=10; // x movement increment
+var _yinc=10; // y movement increment
+ctx.fillStyle="#FF0000"; 
+ctx.fillRect(_xi+_xinc,_yi,50,50);
+}
+
+
 </script>
