@@ -12,18 +12,21 @@ var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 var _xi=10; // initialising variable for _x position
 var _yi=10; // initialising variable for _y position
+var _x=_xi; // initialise _x position
+var _y=_yi; // initialise _y position
+var _xinc=10; // x movement increment
+var _yinc=10; // y movement increment
 function drawRect (xc,yc)
 {
 ctx.fillStyle="#FF0000"; 
-ctx.fillRect(_xi,_yi,50,50);
+ctx.fillRect(xc,yc,50,50);
 }
-drawRect(_xi,_yi);
+drawRect(_xi,_yi); // initialise draw
+
 function xMoveLeft()
 {
-var _xinc=10; // x movement increment
-var _yinc=10; // y movement increment
-ctx.fillStyle="#FF0000"; 
-ctx.fillRect(_xi+_xinc,_yi,50,50);
+_x=_x+_xi;
+drawRect(_x,_y);
 }
 
 
