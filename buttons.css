@@ -1,0 +1,131 @@
+.wiz-buttons > a {
+    position: relative;
+    display:block;
+    font: normal 14px Arial;
+    text-decoration: none;
+    cursor:pointer;
+}    
+
+hoverColor = #e3e3e3; // define hover color
+.wiz-buttons > a > .button {
+    min-width: 75px;
+}
+
+/* Next Button */
+
+.wiz-buttons > .next {
+    color: #000; // text colour for next button
+}
+
+.wiz-buttons > .next > .arrow-inner {
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    z-index: 2000;
+    width: 0;
+    height: 0;
+    border: 14px solid transparent;
+    border-left-color: #BFEFFF;  // this is the inner color of the arrow (the arrow 'fill' is a border)
+}
+
+.wiz-buttons > .next > .arrow {
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    border:  15px solid transparent;
+    border-left-color: #eaeaea; // outer colour
+}
+
+.wiz-buttons > .next > .button {
+    display: block;
+    float: right;
+    line-height: 20px;
+    background-color: #BFEFFF;
+    border: 2px solid #eaeaea;
+    border-right: 0;
+    padding: 3px 3px 3px 9px;
+    text-align: center;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.wiz-buttons > .next:hover > .arrow {
+    border-left-color: #6A6A8D; 
+}
+
+.wiz-buttons > .next:hover > .arrow-inner {
+    border-left-color: #BFEFFF; 
+}
+
+.wiz-buttons > .next:hover > .button {
+    background-color: #BFEFFF; 
+    border-color: #6A6A8D;
+}
+
+
+/* Previous Button */
+
+.wiz-buttons > .previous {
+    color: #000;// text colour for previous button
+
+}
+
+.wiz-buttons > .previous > .arrow-inner {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    z-index: 2000;
+    width: 0;
+    height: 0;
+    border: 14px solid transparent;
+    border-right-color: #BFEFFF;   // this is the inner color of the arrow (the arrow 'fill' is a border)
+ 
+}
+
+.wiz-buttons > .previous > .arrow {
+    display: block;
+    float: left;
+    width: 0;
+    height: 0;
+    border:  15px solid transparent;
+    border-right-color: #eaeaea;
+}
+
+.wiz-buttons > .previous > .button {
+    display: block;
+    float: left;
+    line-height: 20px;
+    background-color: #BFEFFF;
+    border: 2px solid #eaeaea;
+    border-left: 0;
+    padding: 3px 9px 3px 3px;
+    text-align: center;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.wiz-buttons > .previous:hover > .arrow {
+    border-right-color: #6A6A8D;
+}
+
+.wiz-buttons > .previous:hover > .arrow-inner {
+    border-right-color: #BFEFFF;
+}
+
+.wiz-buttons > .previous:hover > .button {
+    background-color: #BFEFFF;
+    border-color: #6A6A8D; 
+}
