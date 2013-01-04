@@ -1,0 +1,46 @@
+<LINK REL=StyleSheet HREF="sites/all/themes/zen-rb/css/buttons.css" TYPE="text/css" MEDIA=screen>
+
+<canvas id="myCanvas" width=800 height="300" style="border:1px solid #000000;">Testing canvas. If you can see this message your browser doesn't support this yet :(
+</canvas>
+<div class="wiz-buttons">
+    <a class="previous" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="prevButt" onmouseup="xMoveLeft()">Previous</span></a><a class="next" href="#"><span class="arrow"></span><span class="arrow-inner"></span><span class="button" id="nextButt" onmouseup="xMoveRight()">Next</span></a>
+</div>​
+<br />
+End here...
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var _xi=10; // initialising variable for _x position
+var _yi=10; // initialising variable for _y position
+var _x=_xi; // initialise _x position
+var _y=_yi; // initialise _y position
+var _xinc=10; // x movement increment
+var _yinc=10; // y movement increment
+function drawRect (xc,yc)
+{
+ctx.fillStyle="#FF0000"; 
+ctx.fillRect(xc,yc,50,50);
+}
+function clearRect (xc,yc)
+{
+ctx.fillStyle="#FFFFFF"; 
+ctx.fillRect(xc,yc,50,50);
+}
+drawRect(_xi,_yi); // initialise draw
+
+function xMoveRight()
+{
+clearRect (_x,_y);
+_x=_x+_xi;
+drawRect(_x,_y);
+}
+
+function xMoveLeft()
+{
+clearRect (_x,_y);
+_x=_x-_xi;
+drawRect(_x,_y);
+}
+
+
+</script>
