@@ -31,39 +31,28 @@ window.ctx2=c.getContext("2d");
 window.ctx3=c.getContext("2d");
 window.txt=c.getContext("2d");
 window.xxBKUP=0;
-window.xx2BKUP=0;
+window.yyBKUP=0;
 }
 // -------------------------------end setup ---------------------
 
-/*
-var c=document.getElementById("myCanvas");
-var ctx=c.getContext("2d");
-var ctx2=c.getContext("2d");
-var ctx3=c.getContext("2d");
-var txt=c.getContext("2d");
-*/
 
 function rectRandom(){
 //ctx.fillStyle="ffffff";
-//ctx.fillRect(xxBKUP,xx2BKUP,W,H);
+//ctx.fillRect(xxBKUP,yyBKUP,W,H);
 window.xx=Math.random(1)*W;//random(150);
-window.xx2=(Math.random(1)*W)-(W/2);//random(150));
+window.yy=(Math.random(1)*H);//random(150));
 xxBKUP=xx;
-xx2BKUP=xx2;
+yyBKUP=yy;
 
-
-ctx.fillRect(xx,xx2,defH,xx);
-//txt.fillStyle="ffffff";
-//txt.fillText("flipping 'eck",xx,defH);
-// must do each time
-
-// 
-//alert("annoying"+xx+" and " +xx2)
-ctx.fillStyle="ccoo55";
-ctx.fillRect(xx,xx2,xx,defH);
+//ctx.fillRect(xx,yy,defH,xx);
+txt.fillStyle="hh7766";
+txt.fillText("flipping 'eck",xx,yy);
+// must do each time 
+//alert("annoying"+xx+" and " +yy)
+//ctx.fillStyle="ccoo55";
+//ctx.fillRect(xx,yy,xx,defH);
 //myCanvas.width=xx;
 
 }
-
-
-setInterval(function(){rectRandom()},1900);
+window.phi=100;
+setInterval(function(){rectRandom()},phi);
