@@ -31,7 +31,7 @@ window.ctx2=c.getContext("2d");
 window.ctx3=c.getContext("2d");
 window.txt=c.getContext("2d");
 window.xxBKUP=0;
-window.yyBKUP=0;
+window.xx2BKUP=0;
 }
 // -------------------------------end setup ---------------------
 
@@ -45,21 +45,22 @@ var txt=c.getContext("2d");
 
 function rectRandom(){
 //ctx.fillStyle="ffffff";
-//ctx.fillRect(xxBKUP,yyBKUP,W,H);
+//ctx.fillRect(xxBKUP,xx2BKUP,W,H);
 window.xx=Math.random(1)*W;//random(150);
-window.yy=(Math.random(1)*W)-(W/2);//random(150));
+window.xx2=(Math.random(1)*W)-(W/2);//random(150));
 xxBKUP=xx;
-yyBKUP=yy;
+xx2BKUP=xx2;
 
+
+ctx.fillRect(xx,xx2,defH,xx);
 //txt.fillStyle="ffffff";
-ctx.fillRect(xx,yy,W,H);
 //txt.fillText("flipping 'eck",xx,defH);
 // must do each time
 
 // 
-//alert("annoying"+xx+" and " +yy)
+//alert("annoying"+xx+" and " +xx2)
 ctx.fillStyle="ccoo55";
-ctx.fillRect(xx,yy,xx,defH);
+ctx.fillRect(xx,xx2,xx,defH);
 //myCanvas.width=xx;
 
 }
