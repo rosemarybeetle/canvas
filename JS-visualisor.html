@@ -3,49 +3,16 @@
 <head>
 
   <title>Hello Web - Processing.js Test</title>
-  <script src="processing-1.4.1-api.min"></script>
-  <script src="modernizr.min.js"></script>
-  
+   <script src="modernizr.min.js"></script>
+  <script src="tweetenstein.js"></script>  
 </head>
 <body>
   <h1>Canvas visualising test</h1>
   <div id="targetBox"><p>nn</p></div>
-  <script>if (Modernizr.canvas) {
-   alert ("let's draw some shapes!")
-} else {
-   alert("no native canvas support available :( ")
-}
-</script>
   <canvas  id="myCanvas" width="1000" height="400" style="border:1px solid #cc22cc;"></canvas>
   <script>
-  var c=document.getElementById("myCanvas");
-var ctx=c.getContext("2d");
-var ctx2=c.getContext("2d");
-var ctx3=c.getContext("2d");
-function rectMaker(x,y,W,H,h,col){
-ctx.fillStyle="#ffffff";
-ctx.fillRect(x,y,W,H);
-ctx2.fillStyle=col;
-xx=Math.random(1)*W;//random(150)
-yy=(Math.random(1)*W)-(W/2);//random(150))
-yy2=(Math.random(1)*W)-(W/2);//random(150))
-ctx2.fillRect(yy,0,xx,h);
-ctx3.fillStyle="ccoo55";
-ctx3.fillRect(yy2,100,xx,h);
-
-}
-
-function rectRandom(){
-
-(function printer (){
-var node = document.getElementById("targetBox");
-node.innerHTML = "<p>" + "Hello World!" + "</p>";
-})
-rectMaker(0,0,1000,400,50,"cc33ff");
-}
-
-setInterval(function(){rectRandom()},190);
+ setUp();
+//alert ("helloe tweetenstein");
 </script>
-
 </body>
 </html>
