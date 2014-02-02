@@ -17,11 +17,15 @@ Optional test script to identify any elements (and handle them if necessary
 
 //-------------------------------Set Up------------------------
 function setUp() {
-alert ("helloe tweetenstein");
+/* optional checking
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  alert("Yay - The File APIs are supported by your browser.")
+} else {
+  alert('The File APIs are not fully supported by your browser.');
+}*/
+alert ("Hello, Tweetenstein.js...");
 W=document.body.clientWidth;
 H=document.body.clientHeight;
-myCanvas.width=W;
-myCanvas.height=H;
 myCanvas.width=W;
 myCanvas.height=H;
 window.defH=30;
@@ -36,23 +40,21 @@ window.yyBKUP=0;
 // -------------------------------end setup ---------------------
 
 
-function rectRandom(){
-//ctx.fillStyle="ffffff";
-//ctx.fillRect(xxBKUP,yyBKUP,W,H);
-window.xx=Math.random(1)*W;//random(150);
+function plotLoop(txty){
+//tx.globalAlpha=1;
+window.xx=Math.random(1)*W-35;//random(150);
 window.yy=(Math.random(1)*H);//random(150));
 xxBKUP=xx;
 yyBKUP=yy;
 
 //ctx.fillRect(xx,yy,defH,xx);
 txt.fillStyle="hh7766";
-txt.fillText("flipping 'eck",xx,yy);
-// must do each time 
-//alert("annoying"+xx+" and " +yy)
-//ctx.fillStyle="ccoo55";
-//ctx.fillRect(xx,yy,xx,defH);
-//myCanvas.width=xx;
+txt.fillText(txty,xx,yy);
+
+//ctx.globalAlpha=0.2;
+
 
 }
-window.phi=100;
-setInterval(function(){rectRandom()},phi);
+window.phi=1;
+window.txty="Hello World...";
+setInterval(function(){plotLoop(txty)},phi);
