@@ -14,7 +14,11 @@ if (Modernizr.canvas) {
 }
 Optional test script to identify any elements (and handle them if necessary
 ------------------*/
-
+function screenSize()
+{
+window.W=document.body.clientWidth;
+window.H=document.body.clientHeight;
+}
 //-------------------------------Set Up------------------------
 function setUp() {
 /* optional checking
@@ -24,37 +28,37 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
   alert('The File APIs are not fully supported by your browser.');
 }*/
 alert ("Hello, Tweetenstein.js...");
-W=document.body.clientWidth;
-H=document.body.clientHeight;
+screenSize();
 myCanvas.width=W;
-myCanvas.height=H;
-window.defH=30;
-var c=document.getElementById("myCanvas");
-window.ctx=c.getContext("2d");
-window.ctx2=c.getContext("2d");
-window.ctx3=c.getContext("2d");
-window.txt=c.getContext("2d");
-window.xxBKUP=0;
-window.yyBKUP=0;
+myCanvas.height = H;
+var ctxt=document.getElementById("myCanvas");
+window.txt=ctxt.getContext("2d");
+window.fontDef="20px Arial";
+txt.font=fontDef;
+
 }
 // -------------------------------end setup ---------------------
-
+function harvestText ()
+{
+}
 
 function plotLoop(txty){
-//tx.globalAlpha=1;
-window.xx=Math.random(1)*W-35;//random(150);
-window.yy=(Math.random(1)*H);//random(150));
-xxBKUP=xx;
-yyBKUP=yy;
-
-//ctx.fillRect(xx,yy,defH,xx);
-txt.fillStyle="hh7766";
+screenSize();
+window.xx=Math.random(1)*W-35;//initialise random x position variable;
+window.yy=Math.random(1)*H;//initialise random y position variable;
+txt.fillStyle="#86DDDE";
 txt.fillText(txty,xx,yy);
-
-//ctx.globalAlpha=0.2;
-
-
 }
-window.phi=1;
+function plotPulse() {
+myCanvas.width=W;
+myCanvas.height=H;
+window.fontDef="20px Arial";
+txt.font=fontDef;
+}
+// speed of text draw
+window.phi=20;
+// speed of pulse
+window.phi2=4000;
 window.txty="Hello World...";
-setInterval(function(){plotLoop(txty)},phi);
+setInterval(function(){plotPulse()},phi2); //redraws a backgound to make the text visible
+setInterval(function(){plotLoop(txty)},phi); // fires out text at rate set by period: phi
