@@ -8,9 +8,9 @@ github
 
 /* -------------
 if (Modernizr.canvas) {
-   alert ("let's draw some shapes!")
+   console.log ("let's draw some shapes!")
 } else {
-   alert("no native canvas support available :( ")
+   console.log("no native canvas support available :( ")
 }
 Optional test script to identify any elements (and handle them if necessary
 ------------------*/
@@ -20,14 +20,46 @@ window.W=document.body.clientWidth;
 window.H=document.body.clientHeight;
 }
 //-------------------------------Set Up------------------------
+function yep() {
+ console.log ('yep');
+}
+function loadLastTweet ()
+{
+$.getJSON( "lastTweet.json", function( data ) {
+  var items = [];
+  $.each( data, function( lasttweetID ) {
+    items.push( lasttweetID);
+  });
+  console.log('hhh');
+ });
+
+}
+
 function setUp() {
-/* optional checking
+/* optional checking for html5 file apis, needed to read data
 if (window.File && window.FileReader && window.FileList && window.Blob) {
-  alert("Yay - The File APIs are supported by your browser.")
+  console.log("Yay - The File APIs are supported by your browser.")
 } else {
-  alert('The File APIs are not fully supported by your browser.');
+  console.log('The File APIs are not fully supported by your browser.');
 }*/
-alert ("Hello, Tweetenstein.js...");
+// +++
+$( document ).ready(function() {
+console.log ('ready');
+$.getJSON('lastTweet.json', function(response){
+       JSON = response;
+       console.log(JSON.property);
+ })
+$.getJSON( "lastTweet.json", function( data ) {
+  var items = [];
+  console.log(data);
+  console.log('xxx');
+ });
+ console.log('!!!');
+});
+
+// +++
+console.log ("Hello, Tweetenstein.js...");
+
 screenSize();
 myCanvas.width=W;
 myCanvas.height = H;
